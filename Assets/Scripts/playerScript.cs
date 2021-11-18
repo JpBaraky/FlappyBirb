@@ -23,5 +23,11 @@ public class playerScript : MonoBehaviour
             playerRb.AddForce(new Vector2(0, jumpForce));
         }
     }
+    void OnTriggerEnter2D(){
+        Debug.Log("Birb Dead");
+
+    }
+
+    
   
 } 
