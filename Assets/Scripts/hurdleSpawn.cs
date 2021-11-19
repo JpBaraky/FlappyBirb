@@ -35,9 +35,9 @@ public class hurdleSpawn : MonoBehaviour
         GameObject tempPreFab =  Instantiate(hurdlePreFab) as GameObject;
        
         if(position == 1){
-             tempPreFab.transform.position = new Vector3(transform.position.x, -1.47f, tempPreFab.transform.position.z);
+             tempPreFab.transform.position = new Vector3(transform.position.x, 3f, tempPreFab.transform.position.z);
         } else {
-             tempPreFab.transform.position = new Vector3(transform.position.x, -0.8f, tempPreFab.transform.position.z);
+             tempPreFab.transform.position = new Vector3(transform.position.x, -4f, tempPreFab.transform.position.z);
         }
         spawning = false;
     } 
