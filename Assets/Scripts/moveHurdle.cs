@@ -10,7 +10,7 @@ public class moveHurdle : MonoBehaviour
 
     [Header("Score Systems")]
     public GameObject player;
-    public bool score;
+    public bool score = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +27,7 @@ public class moveHurdle : MonoBehaviour
         hurdleX += hurdleSpeed * Time.deltaTime;
         transform.position = new Vector3(hurdleX, transform.position.y, transform.position.z);
         // ##---------------##
-       /* if (hurdleX < player.transform.position.x && !score)
-        {
-            score = true;
-            playerScript.score++;
 
-        }*/
 
         // ## Hurdle Destroy ##
         if (hurdleX < -5)
@@ -40,6 +35,11 @@ public class moveHurdle : MonoBehaviour
             Destroy(this.gameObject);
         }
         //##
+        if (hurdleX < player.transform.position.x && !score)
+        {
+            score = true;
+            gameController.score++;
 
+        }
     }
 }

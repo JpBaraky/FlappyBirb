@@ -46,6 +46,7 @@ public class playerScript : MonoBehaviour
    }
     void OnTriggerEnter2D(){
         Debug.Log("Birb Dead");
+        gameController.score = 0;
 
     }
 
