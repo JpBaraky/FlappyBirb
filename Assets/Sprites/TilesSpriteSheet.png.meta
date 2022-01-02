@@ -1048,10 +1048,10 @@ TextureImporter:
         x: 256
         y: 128
         width: 32
-        height: 32
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 19}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1830,8 +1830,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       TilesSpriteSheet_48: 1292739427
-      TilesSpriteSheet_12: -1920371893
-      TilesSpriteSheet_25: -1268606431
+      TilesSpriteSheet_40: -617831725
+      TilesSpriteSheet_2: -51506539
       TilesSpriteSheet_5: 646365616
       TilesSpriteSheet_26: -159364625
       TilesSpriteSheet_76: -1332832933
@@ -1908,8 +1908,8 @@ TextureImporter:
       TilesSpriteSheet_69: 1549514458
       TilesSpriteSheet_18: 2011738304
       TilesSpriteSheet_54: 1191968861
-      TilesSpriteSheet_2: -51506539
-      TilesSpriteSheet_40: -617831725
+      TilesSpriteSheet_12: -1920371893
+      TilesSpriteSheet_25: -1268606431
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

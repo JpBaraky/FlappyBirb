@@ -12,6 +12,8 @@ public class playerScript : MonoBehaviour
     private bool flap = false;
     private Rigidbody2D playerRb;
     private Animator animator;
+    public bool tookFlight;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,9 @@ public class playerScript : MonoBehaviour
    }
     void OnTriggerEnter2D(){
         Debug.Log("Birb Dead");
+        if(gameController.score > gameController.highScore){
+            gameController.highScore = gameController.score;
+        }
         gameController.score = 0;
 
     }
