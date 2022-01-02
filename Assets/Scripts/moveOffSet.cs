@@ -7,7 +7,7 @@ public class moveOffSet : MonoBehaviour
     private Material material;
     private playerScript playerScript;
     [Header("Movement Systems")]
-    public float offSetSpeed;
+    public static float offSetSpeed;
     private float offSet;
     // Start is called before the first frame update
     void Start()

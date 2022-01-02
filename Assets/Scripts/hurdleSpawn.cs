@@ -9,7 +9,7 @@ public class hurdleSpawn : MonoBehaviour
     [Header("Spawining Systems")]
     public float spawnRateMin;
     public float spawnRateMax;
-    public bool spawning;
+    public static bool spawning;
     private int position;
     // Start is called before the first frame update
     void Start()

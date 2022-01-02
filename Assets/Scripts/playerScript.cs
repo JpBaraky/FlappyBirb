@@ -12,30 +12,38 @@ public class playerScript : MonoBehaviour
     private bool flap = false;
     private Rigidbody2D playerRb;
     private Animator animator;
-    public bool tookFlight;
+    private bool hurdleSpawing = false;
+    public static bool tookFlight = false;
     
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerRb.Sleep();
+        moveOffSet.offSetSpeed = 0;
+        hurdleSpawn.spawning = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetMouseButtonDown(0)){
-             flap = true;
-         }
+        GameStart();
+        
+        
+            
     }
    void FixedUpdate(){
-    		
+      
+       
 
 		if(flap) {
 			playerRb.AddForce( Vector2.up * jumpForce );
 			animator.SetTrigger("Flap");
 			flap = false;
 		}
+       
+    		
 
 	/*	if(playerRb.velocity.y > 0) {
 			transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -52,6 +60,25 @@ public class playerScript : MonoBehaviour
             gameController.highScore = gameController.score;
         }
         gameController.score = 0;
+
+    }
+    void GameStart(){
+         if (Input.GetMouseButtonDown(0)){
+             if(!tookFlight){
+            animator.SetBool("TookFlight", true);
+            moveOffSet.offSetSpeed = 0.2f;
+            playerRb.WakeUp();
+            tookFlight = true;
+            if(!hurdleSpawing){
+            hurdleSpawn.spawning = false;
+            hurdleSpawing = true;
+            }
+            }
+            else{
+             flap = true;
+         }
+            
+         }
 
     }
 

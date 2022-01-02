@@ -187,7 +187,6 @@ MonoBehaviour:
   hurdlePreFab: {fileID: 5425939581343692067, guid: 5f2f790ff6695324596e2e920bff67ad, type: 3}
   spawnRateMin: 2
   spawnRateMax: 5
-  spawning: 0
 --- !u!4 &183997742
 Transform:
   m_ObjectHideFlags: 0
@@ -597,7 +596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2393fc78eb628ae4ebeed5e22584950a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSetSpeed: 0.2
 --- !u!64 &876842460
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -852,6 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375542348}
   - component: {fileID: 1375542347}
+  - component: {fileID: 1375542349}
   m_Layer: 0
   m_Name: TilesSpriteSheet_44
   m_TagString: Untagged
@@ -926,6 +925,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1375542349
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375542346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d66494196295e7e4685d6f328b8f9c92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1852289898
 GameObject:
   m_ObjectHideFlags: 0
