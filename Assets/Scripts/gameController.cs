@@ -13,8 +13,7 @@ public class gameController : MonoBehaviour
     
     void Start()
     {
-        score = 0;
-        PlayerPrefs.SetInt("Score", score);
+        
         if(PlayerPrefs.HasKey("HiScore")){
         highScore = PlayerPrefs.GetInt("HiScore");
         }
