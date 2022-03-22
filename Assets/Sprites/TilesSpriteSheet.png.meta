@@ -148,7 +148,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 11}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -400,7 +400,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 9, y: 9, z: 9, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -631,7 +631,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -862,7 +862,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 15, y: 14, z: 15, w: 16}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1282,7 +1282,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1635,11 +1635,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 13, z: 15, w: 17}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1830,8 +1830,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       TilesSpriteSheet_48: 1292739427
-      TilesSpriteSheet_40: -617831725
-      TilesSpriteSheet_2: -51506539
+      TilesSpriteSheet_12: -1920371893
+      TilesSpriteSheet_25: -1268606431
       TilesSpriteSheet_5: 646365616
       TilesSpriteSheet_26: -159364625
       TilesSpriteSheet_76: -1332832933
@@ -1908,8 +1908,8 @@ TextureImporter:
       TilesSpriteSheet_69: 1549514458
       TilesSpriteSheet_18: 2011738304
       TilesSpriteSheet_54: 1191968861
-      TilesSpriteSheet_12: -1920371893
-      TilesSpriteSheet_25: -1268606431
+      TilesSpriteSheet_2: -51506539
+      TilesSpriteSheet_40: -617831725
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

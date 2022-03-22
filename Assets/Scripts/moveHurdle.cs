@@ -22,6 +22,9 @@ public class moveHurdle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player == null){
+            player = GameObject.Find("Player") as GameObject;
+        }
         // ## Hurdle Movement ##
         hurdleX = transform.position.x;
         hurdleX += hurdleSpeed * Time.deltaTime;

@@ -14,8 +14,9 @@ public class fadeBackground: MonoBehaviour {
     
       void Start()
     {
+           
             playerScript = FindObjectOfType(typeof(playerScript)) as playerScript;   
-
+           
             fadeOut();
         
     }
@@ -40,9 +41,11 @@ public class fadeBackground: MonoBehaviour {
             fume.color = Color.Lerp(corTransicao[0],corTransicao[1],i);
             yield return new WaitForEndOfFrame();
         }
+        if(playerScript != null){
         if(playerScript.isDead) {
 
             playerScript.GameOver();
+        }
         }
     }
     IEnumerator FadeO() {
