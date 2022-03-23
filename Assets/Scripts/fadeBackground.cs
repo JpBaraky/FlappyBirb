@@ -11,6 +11,8 @@ public class fadeBackground: MonoBehaviour {
     public float step;
     private bool transition;
     private playerScript playerScript;
+    public float fadeOutTimer = 0.5f;
+    public bool  screenFlash;
     
       void Start()
     {
@@ -41,6 +43,10 @@ public class fadeBackground: MonoBehaviour {
             fume.color = Color.Lerp(corTransicao[0],corTransicao[1],i);
             yield return new WaitForEndOfFrame();
         }
+        if(screenFlash){
+            fadeOut();
+            screenFlash = false;
+        }
         if(playerScript != null){
         if(playerScript.isDead) {
 
@@ -49,7 +55,7 @@ public class fadeBackground: MonoBehaviour {
         }
     }
     IEnumerator FadeO() {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeOutTimer);
         for(float i = 0; i <= 1; i += step) {
             fume.color = Color.Lerp(corTransicao[1],corTransicao[0],i);
             yield return new WaitForEndOfFrame();
@@ -59,11 +65,13 @@ public class fadeBackground: MonoBehaviour {
         transition = false;
     }
     IEnumerator ResetDeath() {
-        Debug.Log("teste");
+       
         StartCoroutine("FadeI");
         yield return new WaitForEndOfFrame();
         //StartCoroutine("FadeO");
     }
+    
+    
 
 
 }
