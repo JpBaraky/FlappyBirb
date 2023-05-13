@@ -4,19 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class fadeBackground: MonoBehaviour {
     public GameObject painelFume;
+    private playerScript playerScript;
     public Image fume;
     public Color[] corTransicao;
     public float step;
     private bool transition;
-    private playerScript playerScript;
+    public float fadeOutTimer = 0.5f;
+    public static bool screenFlash;
     
       void Start()
     {
-            playerScript = FindObjectOfType(typeof(playerScript)) as playerScript;   
-
+        playerScript = FindObjectOfType(typeof(playerScript)) as playerScript;
+            if(painelFume.activeInHierarchy == false){
+                painelFume.SetActive(true);
+            }
+           
             fadeOut();
+
         
     }
     public void fadeIn() {
@@ -40,13 +47,16 @@ public class fadeBackground: MonoBehaviour {
             fume.color = Color.Lerp(corTransicao[0],corTransicao[1],i);
             yield return new WaitForEndOfFrame();
         }
+        if(playerScript != null){
         if(playerScript.isDead) {
 
             playerScript.GameOver();
         }
+        }
+        
     }
     IEnumerator FadeO() {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeOutTimer);
         for(float i = 0; i <= 1; i += step) {
             fume.color = Color.Lerp(corTransicao[1],corTransicao[0],i);
             yield return new WaitForEndOfFrame();
@@ -55,12 +65,19 @@ public class fadeBackground: MonoBehaviour {
         painelFume.SetActive(false);
         transition = false;
     }
-    IEnumerator ResetDeath() {
-        Debug.Log("teste");
-        StartCoroutine("FadeI");
-        yield return new WaitForEndOfFrame();
-        //StartCoroutine("FadeO");
+
+    public void ScreenFlash(){
+        StartCoroutine("FlashScreen");
     }
+    IEnumerator FlashScreen(){
+        fadeIn();
+        yield return new WaitWhile(() => fume.color.a < 0.9f);
+        fadeOut();
+    }
+
+
+    
+    
 
 
 }

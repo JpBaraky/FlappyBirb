@@ -71,7 +71,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,6 +104,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -148,7 +172,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 11}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -400,7 +424,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 9, y: 9, z: 9, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -631,7 +655,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1282,7 +1306,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1635,11 +1659,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 13, z: 15, w: 17}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1818,6 +1842,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TilesSpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 161
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a515a480cbe19dd4abc349b06b870d40
+      internalID: -1873630646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1830,8 +1875,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       TilesSpriteSheet_48: 1292739427
-      TilesSpriteSheet_40: -617831725
-      TilesSpriteSheet_2: -51506539
+      TilesSpriteSheet_12: -1920371893
+      TilesSpriteSheet_25: -1268606431
       TilesSpriteSheet_5: 646365616
       TilesSpriteSheet_26: -159364625
       TilesSpriteSheet_76: -1332832933
@@ -1847,6 +1892,7 @@ TextureImporter:
       TilesSpriteSheet_65: 923571600
       TilesSpriteSheet_73: -471935484
       TilesSpriteSheet_14: -1747808733
+      TilesSpriteSheet_81: -1873630646
       TilesSpriteSheet_62: -270278901
       TilesSpriteSheet_21: -692912380
       TilesSpriteSheet_72: -1846234771
@@ -1908,8 +1954,8 @@ TextureImporter:
       TilesSpriteSheet_69: 1549514458
       TilesSpriteSheet_18: 2011738304
       TilesSpriteSheet_54: 1191968861
-      TilesSpriteSheet_12: -1920371893
-      TilesSpriteSheet_25: -1268606431
+      TilesSpriteSheet_2: -51506539
+      TilesSpriteSheet_40: -617831725
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

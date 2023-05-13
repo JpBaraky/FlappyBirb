@@ -9,36 +9,43 @@ public class hurdleSpawn : MonoBehaviour
     [Header("Spawining Systems")]
     public float spawnRateMin;
     public float spawnRateMax;
+    public float positionMin;
+    public float positionMax;
     public bool spawning;
     private int position;
+    private playerScript playerScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScript = FindObjectOfType(typeof(playerScript)) as playerScript;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        
+         if(playerScript.hurdleSpawing) {
         if(!spawning){
         StartCoroutine("spawnTimer");
         }
+         }
+        if(playerScript.isDead){                       
+            StopAllCoroutines();
+            spawning = false;                                  
+            }
     }
 
     // ## Hurdle Spawner with random position and timer ##
-    private IEnumerator spawnTimer(){
+    public IEnumerator spawnTimer(){
         spawning = true;
-        position = Random.Range(0,2); 
+        
         
         yield return new WaitForSeconds(Random.Range(spawnRateMin, spawnRateMax));
-        GameObject tempPreFab =  Instantiate(hurdlePreFab) as GameObject;
+        GameObject tempPreFab =  Instantiate(hurdlePreFab) as GameObject;       
        
-        if(position == 1){
-             tempPreFab.transform.position = new Vector3(transform.position.x, 3f, tempPreFab.transform.position.z);
-        } else {
-             tempPreFab.transform.position = new Vector3(transform.position.x, -4f, tempPreFab.transform.position.z);
-        }
+        tempPreFab.transform.position = new Vector3(transform.position.x, (float)Random.Range(positionMin,positionMax), tempPreFab.transform.position.z);
+        
         spawning = false;
     } 
     //##

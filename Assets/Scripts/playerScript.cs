@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playerScript : MonoBehaviour
 {
     public bool dead = false;
@@ -13,27 +14,37 @@ public class playerScript : MonoBehaviour
     private Rigidbody2D playerRb;
     private Animator animator;
     private Transform playerTransform;
-    private bool hurdleSpawing = false;
+    public  bool hurdleSpawing = false;
+    private bool flapButton;
     public static bool tookFlight = false;
-    public bool isDead;
-    private hurdleSpawn hurdleSpawn;
+    public static bool isDead;
+    //private hurdleSpawn hurdleSpawn;
     private fadeBackground fadeBackground;
-    private moveOffSet moveOffSet;
+    public static float moveOffSet;
     private gameController gameController;
+    public GameObject tapTap;
+    public GameObject backButton;
+    [Header("Audio System")]
+    public AudioClip[] sounds;
+    public AudioSource playerAudio;
+    public static float incrementalSpeed;
+    private int stopOffSet;
+    
+    
     // Start is called before the first frame update
     void Start()
-    {
+    {   
             
-        hurdleSpawn = FindObjectOfType(typeof(hurdleSpawn)) as hurdleSpawn;
+        //hurdleSpawn = FindObjectOfType(typeof(hurdleSpawn)) as hurdleSpawn;
         gameController = FindObjectOfType(typeof(gameController)) as gameController;
         fadeBackground = FindObjectOfType(typeof(fadeBackground)) as fadeBackground;
-        moveOffSet = FindObjectOfType(typeof(moveOffSet)) as moveOffSet;
+        playerAudio = GetComponent<AudioSource>();
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        moveOffSet.offSetSpeed = 0;
-        hurdleSpawn.spawning = true;
+        stopOffSet = 0;
+        playerAudio.volume = soundControl.sfxVolume;
         
        
     }
@@ -42,8 +53,8 @@ public class playerScript : MonoBehaviour
     void Update()
     {
         GameStart();
-        
-
+        incrementalSpeed = ((((float)gameController.score)/100f) + 1);
+        moveOffSet =  stopOffSet *( incrementalSpeed);
             
     }
    void FixedUpdate(){
@@ -53,6 +64,7 @@ public class playerScript : MonoBehaviour
 		if(flap) {
             playerRb.velocity = new Vector2(0, jumpForce);
 			animator.SetTrigger("Flap");
+            PlaySound();
 			flap = false;
 		}
        
@@ -70,66 +82,95 @@ public class playerScript : MonoBehaviour
    }
     void OnTriggerEnter2D(){
         isDead = true;
-        fadeBackground.fadeIn();
+        fadeBackground.ScreenFlash();
+        Handheld.Vibrate();
+    
         
                
 
     }
     void GameStart(){
-         if (Input.GetMouseButtonDown(0)){
+         if (flapButton){
              if(!tookFlight){
-                gameController.hiScoreTxt.gameObject.SetActive(false);
-
+               
+                 HideUI();
+                 gameController.score = 0;
                 animator.SetBool("TookFlight", true);
-            moveOffSet.offSetSpeed = 0.2f;
+            moveOffSet = 1f;
             playerRb.constraints = RigidbodyConstraints2D.None;
             playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
             tookFlight = true;
                 playerRb.velocity = new Vector2(0,jumpForce);
+                PlaySound();
                 animator.SetTrigger("Flap");
+            stopOffSet = 1; 
+                
                 if(!hurdleSpawing){
-            hurdleSpawn.spawning = false;
+            
             hurdleSpawing = true;
+            
             }
             }
             else{
                 
                 flap = true;
          }
-            
+            flapButton = false;
          }
+
 
     }
     public void GameOver()
 	{
-
-        gameController.hiScoreTxt.gameObject.SetActive(true);
+        
+        ShowUI();
         Debug.Log("Birb Dead");
         if(gameController.score > gameController.highScore){
             gameController.highScore = gameController.score;
+            gameController.SaveHiScore();
         }
-        gameController.score = 0;
+        
+        
 
         tookFlight = false;
         animator.SetBool("TookFlight",false);
 
 
-        moveOffSet.offSetSpeed = 0;
-        moveOffSet.offSet = 0;
+        stopOffSet = 0;
+        
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        playerTransform.transform.position = new Vector3(-1.45f, 0.45f, 0);
+        playerTransform.transform.position = new Vector3(-1.45f, 0.311f, 0);
 
         GameObject[] Hurdles = GameObject.FindGameObjectsWithTag("Hurdle");
         foreach(GameObject hurdle in Hurdles){
         GameObject.Destroy(hurdle);
-
-        hurdleSpawn.StopAllCoroutines();
-        hurdleSpawn.spawning = true;
+        }
+        
+       
         hurdleSpawing = false;
         fadeBackground.fadeOut();
-            isDead = false;
+        isDead = false;
 
-        }
+        
+    }
+    public void PlaySound(){
+         playerAudio.pitch = Random.Range(0.5f,2.0f);
+         playerAudio.PlayOneShot(sounds[Random.Range(0,3)]);
+
+    }
+   
+    public void FlapButton(){
+        flapButton = true;
+    }
+    private void HideUI(){
+         gameController.hiScoreTxt.gameObject.SetActive(false);
+         tapTap.SetActive(false);
+        backButton.SetActive(false);
+    }
+    private void ShowUI(){
+        tapTap.SetActive(true);
+        backButton.SetActive(true);
+        gameController.hiScoreTxt.gameObject.SetActive(true);
     }
    
   
