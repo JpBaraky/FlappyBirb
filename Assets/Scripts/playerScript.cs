@@ -83,7 +83,12 @@ public class playerScript : MonoBehaviour
     void OnTriggerEnter2D(){
         isDead = true;
         fadeBackground.ScreenFlash();
-        Handheld.Vibrate();
+        #if UNITY_ANDROID || UNITY_IPHONE 
+       Handheld.Vibrate();
+#endif
+
+
+ 
     
         
                
@@ -162,7 +167,7 @@ public class playerScript : MonoBehaviour
     public void FlapButton(){
         flapButton = true;
     }
-    private void HideUI(){
+    public void HideUI(){
          gameController.hiScoreTxt.gameObject.SetActive(false);
          tapTap.SetActive(false);
         backButton.SetActive(false);

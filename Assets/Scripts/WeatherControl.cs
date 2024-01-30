@@ -34,7 +34,10 @@ public class WeatherControl : MonoBehaviour
         
         if(isThunder){
             rainAudioSource.PlayOneShot(sounds[0]);
-            Handheld.Vibrate();
+
+             #if UNITY_ANDROID || UNITY_IPHONE 
+       Handheld.Vibrate();
+#endif
             fadeBackground.screenFlash = true;
             fadeBackground.ScreenFlash();
             
