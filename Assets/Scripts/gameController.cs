@@ -9,6 +9,10 @@ public class gameController : MonoBehaviour
     public TextMeshProUGUI scoreTxt;
     public TextMeshProUGUI hiScoreTxt;
     public static int score;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
     public int highScore;
     public float sfxVolume;
 
@@ -22,6 +26,18 @@ public class gameController : MonoBehaviour
     {
         LoadHiScore();
     }
+=======
+    public static int highScore;
+    private int oldHighScore;
+    
+    void Start()
+    {
+        
+        if(PlayerPrefs.HasKey("HiScore")){
+        highScore = PlayerPrefs.GetInt("HiScore");
+        }
+        }
+>>>>>>> develop
 
     // Update is called once per frame
     void Update()
@@ -36,6 +52,10 @@ public class gameController : MonoBehaviour
         else{
         scoreTxt.text = score.ToString(); // Put the score in the text box
         hiScoreTxt.text = highScore.ToString();
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
         }
         
         }
@@ -62,5 +82,15 @@ public class gameController : MonoBehaviour
         sfxVolume = 0.25f;
         musicVolume = 0.2f;
         SaveHiScore();
+<<<<<<< Updated upstream
+=======
+=======
+        
+
+    }
+    void SaveGame(){
+        PlayerPrefs.SetInt("HiScore", highScore);
+>>>>>>> develop
+>>>>>>> Stashed changes
     }
 }

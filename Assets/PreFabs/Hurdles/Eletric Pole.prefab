@@ -28,12 +28,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7404947458430168511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: -2.5192, z: 0}
+=======
+<<<<<<< HEAD
+  m_LocalPosition: {x: 0, y: -2.5192, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 0
+=======
+<<<<<<< HEAD
+  m_RootOrder: 0
+=======
+  m_RootOrder: 12
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &412454987475358781
 SpriteRenderer:
@@ -81,7 +97,15 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
+<<<<<<< Updated upstream
   m_Size: {x: 4.266667, y: 15}
+=======
+<<<<<<< HEAD
+  m_Size: {x: 4.266667, y: 15}
+=======
+  m_Size: {x: 4.266667, y: 10}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,18 +124,42 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 0.010834694, y: -0.09972811}
+=======
+<<<<<<< HEAD
+  m_Offset: {x: 0.010834694, y: -0.09972811}
+=======
+  m_Offset: {x: 0.010834694, y: -0.052197456}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 1.2, y: 0, z: 1.1333334, w: 3.266667}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4.266667, y: 4.266667}
+<<<<<<< Updated upstream
     newSize: {x: 4.266667, y: 15}
+=======
+<<<<<<< HEAD
+    newSize: {x: 4.266667, y: 15}
+=======
+    newSize: {x: 4.266667, y: 10}
+>>>>>>> develop
+>>>>>>> Stashed changes
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 0.69122314, y: 14.961362}
+=======
+<<<<<<< HEAD
+  m_Size: {x: 0.69122314, y: 14.961362}
+=======
+  m_Size: {x: 0.69122314, y: 9.796305}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_EdgeRadius: 0
 --- !u!61 &5256381485419585859
 BoxCollider2D:
@@ -126,18 +174,42 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 0.03998041, y: 6.5376034}
+=======
+<<<<<<< HEAD
+  m_Offset: {x: 0.03998041, y: 6.5376034}
+=======
+  m_Offset: {x: 0.03998041, y: 4.026577}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 1.2, y: 0, z: 1.1333334, w: 3.266667}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4.266667, y: 4.266667}
+<<<<<<< Updated upstream
     newSize: {x: 4.266667, y: 15}
+=======
+<<<<<<< HEAD
+    newSize: {x: 4.266667, y: 15}
+=======
+    newSize: {x: 4.266667, y: 10}
+>>>>>>> develop
+>>>>>>> Stashed changes
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 3.1129522, y: 0.9316101}
+=======
+<<<<<<< HEAD
+  m_Size: {x: 3.1129522, y: 0.9316101}
+=======
+  m_Size: {x: 3.1129522, y: 0.9425998}
+>>>>>>> develop
+>>>>>>> Stashed changes
   m_EdgeRadius: 0
 --- !u!114 &9086143342176099135
 MonoBehaviour:

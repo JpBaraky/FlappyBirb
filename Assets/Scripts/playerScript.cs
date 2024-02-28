@@ -15,7 +15,15 @@ public class playerScript : MonoBehaviour
     private Animator animator;
     private Transform playerTransform;
     public  bool hurdleSpawing = false;
+<<<<<<< Updated upstream
     private bool flapButton;
+=======
+<<<<<<< HEAD
+    private bool flapButton;
+=======
+    
+>>>>>>> develop
+>>>>>>> Stashed changes
     public static bool tookFlight = false;
     public static bool isDead;
     //private hurdleSpawn hurdleSpawn;
@@ -23,6 +31,10 @@ public class playerScript : MonoBehaviour
     public static float moveOffSet;
     private gameController gameController;
     public GameObject tapTap;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
     public GameObject backButton;
     [Header("Audio System")]
     public AudioClip[] sounds;
@@ -30,6 +42,14 @@ public class playerScript : MonoBehaviour
     public static float incrementalSpeed;
     private int stopOffSet;
     
+<<<<<<< Updated upstream
+=======
+=======
+    [Header("Audio System")]
+    public AudioClip[] sounds;
+    private AudioSource playerAudio;
+>>>>>>> develop
+>>>>>>> Stashed changes
     
     // Start is called before the first frame update
     void Start()
@@ -43,8 +63,18 @@ public class playerScript : MonoBehaviour
         animator = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+<<<<<<< Updated upstream
         stopOffSet = 0;
         playerAudio.volume = soundControl.sfxVolume;
+=======
+<<<<<<< HEAD
+        stopOffSet = 0;
+        playerAudio.volume = soundControl.sfxVolume;
+=======
+        moveOffSet = 0;
+       
+>>>>>>> develop
+>>>>>>> Stashed changes
         
        
     }
@@ -82,6 +112,10 @@ public class playerScript : MonoBehaviour
    }
     void OnTriggerEnter2D(){
         isDead = true;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
         fadeBackground.ScreenFlash();
         #if UNITY_ANDROID || UNITY_IPHONE 
        Handheld.Vibrate();
@@ -89,6 +123,12 @@ public class playerScript : MonoBehaviour
 
 
  
+<<<<<<< Updated upstream
+=======
+=======
+        fadeBackground.fadeIn();
+>>>>>>> develop
+>>>>>>> Stashed changes
     
         
                
@@ -108,8 +148,17 @@ public class playerScript : MonoBehaviour
                 playerRb.velocity = new Vector2(0,jumpForce);
                 PlaySound();
                 animator.SetTrigger("Flap");
+<<<<<<< Updated upstream
             stopOffSet = 1; 
                 
+=======
+<<<<<<< HEAD
+            stopOffSet = 1; 
+                
+=======
+                tapTap.SetActive(false);
+>>>>>>> develop
+>>>>>>> Stashed changes
                 if(!hurdleSpawing){
             
             hurdleSpawing = true;
@@ -128,20 +177,45 @@ public class playerScript : MonoBehaviour
     public void GameOver()
 	{
         
+<<<<<<< Updated upstream
         ShowUI();
+=======
+<<<<<<< HEAD
+        ShowUI();
+=======
+        tapTap.SetActive(true);
+        gameController.hiScoreTxt.gameObject.SetActive(true);
+>>>>>>> develop
+>>>>>>> Stashed changes
         Debug.Log("Birb Dead");
         if(gameController.score > gameController.highScore){
             gameController.highScore = gameController.score;
             gameController.SaveHiScore();
         }
+<<<<<<< Updated upstream
         
+=======
+<<<<<<< HEAD
+        
+=======
+        gameController.score = 0;
+>>>>>>> develop
+>>>>>>> Stashed changes
         
 
         tookFlight = false;
         animator.SetBool("TookFlight",false);
 
 
+<<<<<<< Updated upstream
         stopOffSet = 0;
+=======
+<<<<<<< HEAD
+        stopOffSet = 0;
+=======
+        moveOffSet = 0;
+>>>>>>> develop
+>>>>>>> Stashed changes
         
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
         playerTransform.transform.position = new Vector3(-1.45f, 0.311f, 0);
@@ -155,6 +229,10 @@ public class playerScript : MonoBehaviour
         hurdleSpawing = false;
         fadeBackground.fadeOut();
         isDead = false;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 
         
     }
@@ -176,6 +254,18 @@ public class playerScript : MonoBehaviour
         tapTap.SetActive(true);
         backButton.SetActive(true);
         gameController.hiScoreTxt.gameObject.SetActive(true);
+<<<<<<< Updated upstream
+=======
+=======
+
+        
+    }
+    public void PlaySound(){
+         playerAudio.pitch = Random.Range(0.5f,2.0f);
+         playerAudio.PlayOneShot(sounds[Random.Range(0,3)]);
+
+>>>>>>> develop
+>>>>>>> Stashed changes
     }
    
   

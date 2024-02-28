@@ -5,7 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hurdle
+<<<<<<< Updated upstream
   - Destroy
+=======
+<<<<<<< HEAD
+  - Destroy
+=======
+>>>>>>> develop
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

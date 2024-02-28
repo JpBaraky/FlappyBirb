@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/CatLogoScene/Logo Gato.unity
     guid: 090604e512731ee40913f7afa4a19f4e
   - enabled: 1
+=======
+<<<<<<< HEAD
+    path: Assets/Scenes/CatLogoScene/Logo Gato.unity
+    guid: 090604e512731ee40913f7afa4a19f4e
+  - enabled: 1
+=======
+>>>>>>> develop
+>>>>>>> Stashed changes
     path: Assets/Scenes/OpeningScreen.unity
     guid: 609ba3a7caee1fb40ab3e425558ca346
   - enabled: 1

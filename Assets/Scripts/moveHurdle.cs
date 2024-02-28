@@ -24,7 +24,14 @@ public class moveHurdle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
     
+=======
+<<<<<<< HEAD
+    
+=======
+>>>>>>> develop
+>>>>>>> Stashed changes
         if(player == null){
             player = GameObject.Find("Player") as GameObject;
         }
